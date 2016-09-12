@@ -1,0 +1,30 @@
+group 'whosinspace'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+def versions = [
+        dropwizard: '1.0.0',
+        jodd      : "3.7.1",
+
+]
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile "io.dropwizard:dropwizard-core:${versions.dropwizard}"
+    compile "io.dropwizard:dropwizard-client:${versions.dropwizard}"
+    compile "io.dropwizard:dropwizard-assets:${versions.dropwizard}"
+    compile group: 'io.dropwizard', name: 'dropwizard-forms', version: versions.dropwizard
+    compile "org.jodd:jodd-http:${versions.jodd}"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-1'
+    testCompile "io.dropwizard:dropwizard-testing:${versions.dropwizard}"
+    testCompile "io.dropwizard:dropwizard-client:${versions.dropwizard}"
+}

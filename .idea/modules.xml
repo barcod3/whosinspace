@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/whosinspace.iml" filepath="$PROJECT_DIR$/.idea/modules/whosinspace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/whosinspace_main.iml" filepath="$PROJECT_DIR$/.idea/modules/whosinspace_main.iml" group="whosinspace" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/whosinspace_test.iml" filepath="$PROJECT_DIR$/.idea/modules/whosinspace_test.iml" group="whosinspace" />
+    </modules>
+  </component>
+</project>

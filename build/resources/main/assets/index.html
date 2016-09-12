@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whos In Space</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<body>
+
+<script type="text/x-handlebars" id="application">
+    <div class='container'>
+    <h1>Whos In Space</h1>
+    {{outlet}}
+    </div>
+</script>
+
+<script type="text/x-handlebars" id="index">
+    <p>
+        <ul class='list-group col-md-6'>
+        {{#each person in controller.people}}
+            <li class='list-group-item'>
+                {{person.name}} <span class="label label-default">{{person.craft}}</span>
+            </li>
+        {{/each}}
+        </ul>
+    </p>
+</script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.0/ember.prod.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+
+</body>
+</html>
