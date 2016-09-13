@@ -10,20 +10,31 @@
 
 <script type="text/x-handlebars" id="application">
     <div class='container'>
-    <h1>Whos In Space</h1>
+    <h1 class='page-header'>Whos In Space <small>barcod3</small></h1>
     {{outlet}}
     </div>
 </script>
 
 <script type="text/x-handlebars" id="index">
     <p>
-        <ul class='list-group col-md-6'>
-        {{#each person in controller.people}}
-            <li class='list-group-item'>
-                {{person.name}} <span class="label label-default">{{person.craft}}</span>
-            </li>
+    <h3>Current astronauts</h3>
+        <table class='table table-striped'>
+        <tr>
+            <th>Name</th>
+            <th>Craft</th>
+        </tr>
+        {{#each person in controller.roster.people}}
+            <tr>
+              <td>{{person.name}}</td>
+              <td>{{person.craft}}</td>
+            </tr>
         {{/each}}
-        </ul>
+        </table>
+    </p>
+    <h3>ISS Position</h3>
+    <p>
+    <iframe ALLOW-FROM="https://maps.google.com/" width="900" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{{unbound controller.mapurl}}"></iframe>
+
     </p>
 </script>
 
