@@ -45,3 +45,12 @@ space.ReadsController = Ember.ObjectController.extend({
     }
 })
 
+Ember.Handlebars.registerBoundHelper('formatDate', function(date) {
+    if(new Date(date).getFullYear() > 1753)
+        return moment(date).format('DD/MM/YYYY')
+});
+
+Ember.Handlebars.registerBoundHelper('fromNow', function(date) {
+  return moment(date).fromNow()
+});
+

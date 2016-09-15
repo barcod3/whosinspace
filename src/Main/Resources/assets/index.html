@@ -62,14 +62,18 @@
         <tr>
             <th>Reference</th>
             <th>Serial No</th>
+            <th>Start Date</th>
+            <th>End Date</th>
         </tr>
         {{#each meter in meters.Gas}}
             <tr>
               <td>{{meter.GReference}}</td>
               <td>{{meter.GMeterRegSerial}}</td>
+              <td>{{formatDate meter.GStartDate}}</td>
+              <td>{{formatDate meter.GEndDate}}</td>
             </tr>
             <tr>
-                <td colspan=2>
+                <td colspan=4>
                     <table class="table table-default">
                         <tr>
                             <th>Date</th>
@@ -79,7 +83,7 @@
                         </tr>
                         {{#each read in meter.GUseDom}}
                             <tr>
-                                <td>{{read.GUDDate}}</td>
+                                <td>{{formatDate read.GUDDate}} ({{fromNow read.GUDDate}})</td>
                                 <td>{{read.GUDARead}}</td>
                                 <td>{{read.GUDCRead}}</td>
                                 <td>{{read.GUDERead}}</td>
@@ -104,6 +108,7 @@
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.0/ember.prod.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="scripts/moment.js"></script>
 <script type="text/javascript" src="scripts/app.js"></script>
 
 </body>
