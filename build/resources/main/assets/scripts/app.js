@@ -8,12 +8,40 @@ var space = Ember.Application.create({
 });
 
 
+space.Router.map(function(){
+    this.route('space')
+    this.route('reads')
+})
 
-
-space.IndexRoute = Ember.Route.extend({
+space.SpaceRoute = Ember.Route.extend({
     model: function () {
-        return $.getJSON("../whosinspace");
+    return $.getJSON("../whosinspace");
     },
 
 });
+
+space.ReadsRoute = Ember.Route.extend({
+    model: function () {
+
+    },
+
+
+
+
+
+});
+
+space.ReadsController = Ember.ObjectController.extend({
+    accountNo:"6958784",
+    meters:null,
+    actions:{
+        getMeters: function(){
+            that = this;
+
+            Ember.$.getJSON("../reads?custaccountno=" + this.accountNo).then(function(data){
+                that.set('meters',data)
+            })
+        }
+    }
+})
 

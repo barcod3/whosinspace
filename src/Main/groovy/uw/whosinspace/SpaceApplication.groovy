@@ -20,5 +20,6 @@ class SpaceApplication extends Application<SpaceConfiguration> {
     @Override
     void run(SpaceConfiguration configuration, Environment environment) throws Exception {
         environment.jersey().register(new SpaceResource())
+        environment.jersey().register(new ReadsResource())
     }
 }
